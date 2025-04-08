@@ -1,6 +1,3 @@
-from tkinter.constants import COMMAND
-
-
 def create_database_default(name):
     COMMAND = fr'CREATE DATABASE {name};'
     return COMMAND

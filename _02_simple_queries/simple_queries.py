@@ -23,8 +23,8 @@ connection_string = f"""DRIVER={DRIVER};
                         SERVER={SERVER};
                         DATABASE={PAD_DATABASE};
                         UID={USER};
-                        PWD={PASSWORD};
-                        Trusted_Connection=yes"""
+                        PWD={PASSWORD}"""
+
 
 conn = pyodbc.connect(connection_string)
 conn.autocommit = True
@@ -79,8 +79,8 @@ else:
     for record in records:
         data_dict = {'id': record.ProductID, 'name': record.ProductName, 'price': float(record.Price)}
         data_list.append(data_dict)
-finally:
-    conn.close()
+# finally:
+#     conn.close()
 
 print(data_list)
 [print(data) for data in data_list]
